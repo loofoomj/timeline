@@ -65,6 +65,18 @@ class WallController < ApplicationController
      @comment_edit = Comment.find(params[:post_id])
    end
 
+   def edit_comment_complete
+    c = Comment.find(params[:id])
+    c.name = params[:writer_comment_edit]
+    c.content = params[:content_comment_edit]
+    if c.save
+      redirect_to "/wall/posts"
+    else
+      flash[:alert] = p.errors[:content][0]
+      redirect_to :back
+    end
+   end
+
   def posts
   	@posts = Post.all
   end
