@@ -1,7 +1,7 @@
-<div style="background-color: #e9eaed;">
-  <h1>Recent Posts</h1>
+<div style="background-color: #e9eaed; width: auto; font-size: 20px;">
+  <h1>글 목록 입니당</h1>
   <% @posts.reverse.each do |post| %>	
-  <div style="background-color: #ffffff; width: 400px; border: 2px solid #d3d6db; padding: 10px; word-break: break-all;">
+  <div style="background-color: #ffffff; width: auto; border: 2px solid #d3d6db; padding: 10px; word-break: break-all;">
     <h3 style="color: blue;"><%= post.name %></h3>
     <h5><%= post.updated_at.localtime.in_time_zone('Seoul').strftime('%B %d, %Y at %H:%M') %></h5>
     <p><%= post.content %></p>
@@ -10,7 +10,7 @@
       <a href="/wall/write_comment/<%= post.id %>">comment</a>
     <a href="/wall/delete/<%= post.id%>">delete</a></p>
     <% post.comments.each do |comment| %>
-      <div style="background-color: #fafbfb; width: 390px; border: 1px solid #d3d6db; padding: 0px 5px 0px 5px; word-break: break-all; text-align: left;">
+      <div style="background-color: #fafbfb; width: auto; border: 1px solid #d3d6db; padding: 0px 5px 0px 5px; word-break: break-all; text-align: left;">
         <p style="font-size: 90%; text-align: left;"><span style="color: #0000ff; font-weight: bold;"><%= comment.name %></span> <%= comment.content %></p>
         <p style="font-size: 90%; text-align: right;">
           <a href="/wall/edit_comment/<%= post.id %>&<%= comment.id%>">edit</a>
@@ -19,5 +19,5 @@
     <% end %>
   </div><br>
   <% end %>
-  <a href="/wall/write">Write post again</a>
+  <a href="/wall/write">글쓰러 가기</a>
 </div>
