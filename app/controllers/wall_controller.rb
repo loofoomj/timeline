@@ -4,8 +4,8 @@ class WallController < ApplicationController
 
   def write_complete
   	p = Post.new
-  	p.name = params[:write]
-  	p.content = params{:content}
+  	p.name = params[:writer]
+  	p.content = params[:content]
   	if p.save
   		redirect_to "/wall/posts"
   	else
@@ -13,6 +13,10 @@ class WallController < ApplicationController
   		redirect_to :back
   	end
   	
+  end
+
+  def edit
+  	@post_edit = Post.find(params[:id])
   end
 
   def posts
