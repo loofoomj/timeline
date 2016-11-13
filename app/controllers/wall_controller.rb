@@ -81,6 +81,13 @@ class WallController < ApplicationController
      @comment_delete = Comment.find(params[:comment_id])
    end
 
+   def delete_comment_complete
+    c = Comment.find(params[:id])
+    c.destroy
+     
+    redirect_to "/wall/posts"
+   end
+
   def posts
   	@posts = Post.all
   end
