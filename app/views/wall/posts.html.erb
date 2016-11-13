@@ -5,7 +5,9 @@
     <h3 style="color: blue;"><%= post.name %></h3>
     <h5><%= post.updated_at.localtime.in_time_zone('Seoul').strftime('%B %d, %Y at %H:%M') %></h5>
     <p><%= post.content %></p>
-    <p style="font-size: 90%; text-align: right;"><a href="/wall/edit/<%= post.id%>">edit</a>
+    <p style="font-size: 90%; text-align: right;">
+      <a href="/wall/edit/<%= post.id%>">edit</a>
+      <a href="/wall/write_comment/<%= post.id %>">comment</a>
     <a href="/wall/delete/<%= post.id%>">delete</a></p>
   </div><br>
   <% end %>
