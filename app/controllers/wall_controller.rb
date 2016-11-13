@@ -1,4 +1,6 @@
 class WallController < ApplicationController
+
+  #포스트 부
   def write
   end
 
@@ -42,6 +44,8 @@ class WallController < ApplicationController
    	redirect_to "/wall/posts"
    end
 
+   #댓글 부
+
    def write_comment
      @post_comment = Post.find(params[:id])
    end
@@ -54,6 +58,10 @@ class WallController < ApplicationController
     c.save
 
     redirect_to "/wall/posts" 
+   end
+
+   def edit_comment
+     @post_comment_edit = Post.find(params[:id])
    end
 
   def posts
