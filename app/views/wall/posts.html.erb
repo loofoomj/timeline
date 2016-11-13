@@ -14,6 +14,7 @@
         <p style="font-size: 90%; text-align: left;"><span style="color: #0000ff; font-weight: bold;"><%= comment.name %></span> <%= comment.content %></p>
         <p style="font-size: 90%; text-align: right;">
           <a href="/wall/edit_comment/<%= post.id %>&<%= comment.id%>">edit</a>
+          <a href="/wall/delete_comment/<%= comment.id%>">delete</a>
       </div>
     <% end %>
   </div><br>

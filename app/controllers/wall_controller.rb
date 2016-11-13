@@ -62,7 +62,7 @@ class WallController < ApplicationController
 
    def edit_comment
      @post_comment = Post.find(params[:id])
-     @comment_edit = Comment.find(params[:post_id])
+     @comment_edit = Comment.find(params[:comment_id])
    end
 
    def edit_comment_complete
@@ -75,6 +75,10 @@ class WallController < ApplicationController
       flash[:alert] = p.errors[:content][0]
       redirect_to :back
     end
+   end
+
+   def delete_comment
+     @comment_delete = Comment.find(params[:comment_id])
    end
 
   def posts
