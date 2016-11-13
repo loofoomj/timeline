@@ -29,8 +29,13 @@ class WallController < ApplicationController
   		flash[:alert] = p.errors[:content][0]
   		redirect_to :back
   	end
+   end
 
-  end
+   def delete
+   	@post_delete = Post.find(params[:id])
+   end
+
+
 
   def posts
   	@posts = Post.all
