@@ -6,8 +6,8 @@
 			<h3 style="color: #0000ff;"><%= @post_comment.name %></h3>
 			<p><%= @post_comment.content %></p>
 		</div><br>
-		<input type="hidden" name="id" value="<%= @post_comment_edit.id%>">
-		<input style="width: 100px;" type="text" name="writer_comment_edit" value="<%= @post_comment_edit.name %>">: <input style="width: 300px;" type="text" name="content_comment_edit" value="<%= @post_comment_edit.content %>">
+		<input type="hidden" name="id" value="<%= @comment_edit.id%>">
+		<input style="width: 100px;" type="text" name="writer_comment_edit" value="<%= @comment_edit.name %>">: <input style="width: 300px;" type="text" name="content_comment_edit" value="<%= @comment_edit.content %>">
 		<input type="submit" value="write">
 	</form>
 </div>

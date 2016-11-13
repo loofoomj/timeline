@@ -61,7 +61,8 @@ class WallController < ApplicationController
    end
 
    def edit_comment
-     @post_comment_edit = Post.find(params[:id])
+     @post_comment = Post.find(params[:id])
+     @comment_edit = Comment.find(params[:post_id])
    end
 
   def posts
