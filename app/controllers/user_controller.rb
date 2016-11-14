@@ -23,5 +23,23 @@ class UserController < ApplicationController
 
   def login
     	
+  end
+
+  def login_complete
+  	u = User.where(username: params[:username])[0]
+  	if u.nil?
+  		flash[:alert] = "아이디 또는 비밀번호를 확인해주세요"
+  		redirect_to :back
+  	else
+  		if u.password != params[:password]
+  			flash[:alert] = "아이디 또는 비밀번호를 확인해주세요"
+  			redirect_to :back
+  		else
+  			cookies[:user_id] = u.id
+  			flash[:alert] = "로그인 완료"
+  			redirect_to "/wall/posts"
+  		end
+  		
+  	end
     end  
 end
