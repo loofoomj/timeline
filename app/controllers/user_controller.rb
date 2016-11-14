@@ -9,7 +9,7 @@ class UserController < ApplicationController
   		u.password = params[:password]
   		if u.save
   			flash[:alert] = "회원가입 완료"
-  			redirect_to "wall/posts"
+  			redirect_to "/wall/posts"
   		else
   			flash[:alert] = u.errors.values.flatten.join(' ')
   			redirect_to :back
@@ -20,4 +20,8 @@ class UserController < ApplicationController
   	end
   	
   end
+
+  def login
+    	
+    end  
 end
