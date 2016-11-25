@@ -47,4 +47,15 @@ class UserController < ApplicationController
     	cookies.delete(:user_id)
     	redirect_to :back
     end
+
+    def delete_user
+      @user_delete = User.find(params[:user_id])
+    end
+
+    def delete_user_complete
+      u = User.find(params[:id])
+      u.destroy
+      cookies.delete(:user_id)
+      redirect_to "/wall/posts"
+    end
 end

@@ -4,6 +4,8 @@ Timeline::Application.routes.draw do
   get "user/login"
   post "user/login_complete"
   get "user/logout"
+  get "user/delete_user/:user_id" => 'user#delete_user'
+  post "user/delete_user_complete"
   get "wall/write"
   post "wall/write_complete"
   get "wall/posts"

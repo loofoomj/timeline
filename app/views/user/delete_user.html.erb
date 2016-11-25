@@ -1,0 +1,10 @@
+<div style="background-color: #e9eaed;">
+	<h1>탈퇴하겠습니까?</h1>
+	<form action="/user/delete_user_complete" method="post">
+		<input type="hidden" name="id" value="<%= @user_delete.id %>">
+		<div style="background-color: #ffffff; width=400px; border: 2px solid #d3d6db; padding: 10px; word-break: break-all;">
+			<h3 style="color: blue;"><%= @user_delete.username%></h3>
+		</div>
+		<input type="submit" value="confirm">
+	</form>
+</div>
