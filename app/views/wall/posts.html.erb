@@ -16,9 +16,16 @@
     <h5><%= post.updated_at.localtime.in_time_zone('Seoul').strftime('%B %d, %Y at %H:%M') %></h5>
     <p><%= post.content %></p>
     <p style="font-size: 90%; text-align: right;">
-      <a href="/wall/edit/<%= post.id%>">edit</a>
-      <a href="/wall/write_comment/<%= post.id %>">comment</a>
-    <a href="/wall/delete/<%= post.id%>">delete</a></p>
+      <% if cookies[:user_id].nil? 
+         else %>
+        <% current_user = User.find(cookies[:user_id])
+          if current_user.username == post.name || current_user.username == "관리자" %>
+        <a href="/wall/edit/<%= post.id%>">edit</a>
+        <a href="/wall/delete/<%= post.id%>">delete</a>
+        <% end %>
+        <a href="/wall/write_comment/<%= post.id %>">comment</a>
+      <% end %>
+    </p>
     <% post.comments.each do |comment| %>
       <div style="background-color: #fafbfb; width: auto; border: 1px solid #d3d6db; padding: 0px 5px 0px 5px; word-break: break-all; text-align: left;">
         <p style="font-size: 90%; text-align: left;"><span style="color: #0000ff; font-weight: bold;"><%= comment.name %></span> <%= comment.content %></p>
