@@ -4,6 +4,7 @@ class WallController < ApplicationController
 
   #포스트 부
   def write
+    @user_write = User.find(params[:user_id])
   end
 
   def write_complete
