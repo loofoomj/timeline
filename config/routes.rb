@@ -13,7 +13,7 @@ Timeline::Application.routes.draw do
   post "wall/edit_complete"
   get "wall/delete/:id" => 'wall#delete'
   post "wall/delete_complete"
-  get "wall/write_comment/:id" => 'wall#write_comment'
+  get "wall/write_comment/:id&:user_id" => 'wall#write_comment'
   post "wall/write_comment_complete"
   get "wall/edit_comment/:id&:comment_id" => 'wall#edit_comment'
   post "wall/edit_comment_complete"

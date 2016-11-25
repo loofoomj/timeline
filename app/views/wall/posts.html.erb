@@ -23,7 +23,7 @@
         <a href="/wall/edit/<%= post.id%>">edit</a>
         <a href="/wall/delete/<%= post.id%>">delete</a>
         <% end %>
-        <a href="/wall/write_comment/<%= post.id %>">comment</a>
+        <a href="/wall/write_comment/<%= post.id %>&<%= cookies[:user_id] %>">comment</a>
       <% end %>
     </p>
     <% post.comments.each do |comment| %>

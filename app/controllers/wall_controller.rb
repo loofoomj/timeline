@@ -54,6 +54,7 @@ class WallController < ApplicationController
 
    def write_comment
      @post_comment = Post.find(params[:id])
+     @user_write = User.find(params[:user_id])
    end
 
    def write_comment_complete
