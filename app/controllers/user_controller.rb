@@ -36,7 +36,7 @@ class UserController < ApplicationController
   			redirect_to :back
   		else
   			cookies[:user_id] = u.id
-  			flash[:alert] = "로그인 완료"
+  			flash[:alert] = u.username+"님 반갑습니다."
   			redirect_to "/wall/posts"
   		end
   		
