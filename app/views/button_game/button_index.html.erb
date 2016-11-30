@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- I used w3schools for buttons and popups. -->
+<html>
+<head>
+	<!-- css file import -->
+	<link rel="stylesheet" type="text/css" href="assets/button.css">
+	<title>Button Challenge!</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function check(){
+			var n_o_button = document.getElementById("n_o_num").value;
+			if (n_o_button%2 == 1) {
+				alert("Please enter an even number");
+			} else{
+				location.href='../button.html?'+n_o_button;
+			};
+		}
+	</script>
+	<section id="main_section">
+		<div id="image_div">
+			<img src="/assets/rocket-icon.jpg">
+		</div>
+		<div id="title_div"> BUTTON CHALLENGE </div>
+		<br>
+		<div id="n_o_div">How many button : <input type="number" id="n_o_num"><input type="button" value="submit" onclick="check()"></div>
+		<br>
+		<br>
+		<p id="creater">2016. Jose. <a href="http://boognew.cf/">boognew.cf</a></p>
+
+	</section>
+</body>
+</html>

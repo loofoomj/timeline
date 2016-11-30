@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- I used w3schools for buttons and popups. -->
+<html>
+<head>
+	<!-- css file import -->
+	<link rel="stylesheet" type="text/css" href="/assets/button/button.css">
+
+	<!-- javascript file import -->
+	<script type="text/javascript" src="/assets/button.js"></script>
+	<title>Button Challenge!</title>
+</head>
+<body>
+	<section id="main_section">
+		<div id="image_div">
+			<img src="/assets/rocket-icon.jpg">
+		</div>
+		<script type="text/javascript">
+			temp = location.href.split("?") ;
+			var n_o_button = temp[1];
+			document.write('<input type="text" value="'+n_o_button+'" id="cnt_hidden" hidden="true">');
+		</script>
+		<div id="title_div"> BUTTON CHALLENGE </div>
+		<br>
+		<script type="text/javascript">
+		document.write('<div id="cnt_div">ON : <input type="text" value="'+n_o_button+'" readonly="readonly" id="on_cnt" class="cnt"> / OFF : <input type="text" value="0" readonly="readonly" id="off_cnt" class="cnt"></div>');		
+		</script>
+		<br>
+		<!-- button create -->
+		<div id="button_div">
+			<table>
+				<script type="text/javascript">
+					for (var i = 0; i < n_o_button; i++) {
+						if(i%5==0){
+							document.write('<tr>');
+						}
+						document.write('<td><input type="button" class="button" id='+i+' value="ON"></td>');
+						if(i%5==4){
+							document.write('</tr>');
+						}
+					};
+				</script>
+			</table>
+		</div>
+		
+
+		<!-- Trigger the Modal -->
+		<img id="myImg" src="/assets/rocket-icon.jpg" alt="COMPLETE!" hidden="true">
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- The Close Button -->
+		  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+		  <!-- Modal Content (The Image) -->
+		  <img class="modal-content" id="img01">
+
+		  <!-- Modal Caption (Image Text) -->
+		  <div id="caption"></div>
+		</div>
+		<br>
+		<p id="creater">2016. Jose. <a href="http://boognew.cf/">boognew.cf</a></p>
+
+	</section>
+</body>
+</html>

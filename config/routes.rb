@@ -1,4 +1,6 @@
 Timeline::Application.routes.draw do
+  get "button_game/button_index"
+  get "button_game/button"  => 'button_game#button'
   get "user/signup"
   post "user/signup_complete"
   get "user/login"
