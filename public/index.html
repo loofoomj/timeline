@@ -27,7 +27,42 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/turbolinks.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/smooth_scroll.js?body=1"></script>
+    <script type="text/javascript">
+ /*******
+
+    ***    Anchor Slider by Cedric Dugas   ***
+    *** Http://www.position-absolute.com ***
+    
+    Never have an anchor jumping your content, slide it.
+
+    Don't forget to put an id to your anchor !
+    You can use and modify this script for any project you want, but please leave this comment as credit.
+        
+    *****/
+            
+
+
+    $(document).ready(function() {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            //calculate destination place
+            var dest = 0;
+            if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+                dest = $(document).height() - $(window).height();
+            } else {
+                dest = $(this.hash).offset().top;
+            }
+            //go to destination
+            $('html,body').animate({
+                scrollTop: dest
+            }, 1500, 'swing');
+        });
+    });
+    </script>
 
 </head>
 
@@ -50,13 +85,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about">About</a>
+                        <a href="#about" class="scroll">About</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="#services" class="scroll">Services</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="#contact" class="scroll">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -67,7 +102,8 @@
 
 
     <!-- Header -->
-    <a name="about"></a>
+
+    <a name="about" id="about"></a>
     <div class="intro-header">
         <div class="container">
 
@@ -79,7 +115,7 @@
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a href="https://docs.google.com/document/d/e/2PACX-1vQxbw0WPWPiYUyY0wA9S3Yudz38qnlHUun5tyK68Ln1EVuCQilyojjB9fNGwhngDU8JZSgw74yvagvD/pub" target="_blank" class="btn btn-default btn-lg"><span class="network-name">자기소개서</span></a>
+                                <a href="https://drive.google.com/open?id=0B5Ehj2do1HtCeU5McFozTEFFT0E" target="_blank" class="btn btn-default btn-lg"><span class="network-name">자기소개서</span></a>
                             </li>
                             <li>
                                 <a href="https://github.com/loofoomj" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
@@ -100,7 +136,7 @@
 
     <!-- Page Content -->
 
-	<a  name="services"></a>
+	<a  name="services" id="services"></a>
     <div class="content-section-a">
 
         <div class="container">
@@ -148,29 +184,30 @@
     </div>
     <!-- /.content-section-b -->
 
-    <!-- <div class="content-section-a">
+    <div class="content-section-a">
 
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">IONIQ 브랜드페이지:<br>JSP 기반의 Web Page</h2>
+                    <p class="lead">JSP 기반의 Web Page를 구현했습니다. 평소 관심이 많던 현대차의 IONIQ 브랜드의 브랜드 페이지를 구성하였고, 간단한 게시판과 회원가입 및 로그인 기능을 구현했습니다. DB는 Oracle 11g를 이용했습니다.<br>** 현재 급하게 배포하는 관계로 서버상에 Oracle DB가 설치되어 있지 않아 Notice 및 Support의 게시판 기능 및 회원가입 기능은 작동되지 않습니다. 관련 소스코드는 <a href="https://github.com/loofoomj/ioniq_homepage" target="_blank">Github</a>를 참고해주세요.<br><br>
+                    <a target="_blank" href="http://boognew.cf:8080/HTML_page/index.jsp">IONIQ 브랜드페이지로 이동</a>
+                    </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
+                    <img class="img-responsive" src="assets/ioniq.png" alt="">
                 </div>
             </div>
 
-        </div> -->
+        </div>
         <!-- /.container -->
 
-    <!-- </div> -->
+    </div>
     <!-- /.content-section-a -->
 
-	<a  name="contact"></a>
+	<a  name="contact" id="contact"></a>
     <div class="banner">
 
         <div class="container">
