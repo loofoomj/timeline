@@ -27,10 +27,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
-<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
-<script data-turbolinks-track="true" src="/assets/turbolinks.js?body=1"></script>
-<script data-turbolinks-track="true" src="/assets/smooth_scroll.js?body=1"></script>
+    <script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
+    <script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
+    <script data-turbolinks-track="true" src="/assets/turbolinks.js?body=1"></script>
+    <script data-turbolinks-track="true" src="/assets/smooth_scroll.js?body=1"></script>
+
+</head>
+
+<body>
     <script type="text/javascript">
     $(document).ready(function() {
         $(".scroll").click(function (event) {
@@ -45,14 +49,10 @@
             //go to destination
             $('html,body').animate({
                 scrollTop: dest
-            }, 1500, 'swing');
+            }, 800, 'swing');
         });
     });
     </script>
-
-</head>
-
-<body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
